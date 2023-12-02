@@ -1,9 +1,6 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 const path = require('path');
-const caps = {
-    'resolution': '1024x768',  // You can choose any supported resolution as per the selected OS and OS version
-};
 
 test.beforeEach(async ({ page }) => {
   await page.goto('http://35.244.81.193/ghost');

@@ -2,12 +2,13 @@
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
-/*
+ /*
 test.beforeEach(async ({ page }) => {
   await page.goto('http://35.244.81.193/ghost');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Sign In - Pruebas Automatizadas/);
+  
+ await expect(page).toHaveTitle(/Sign In - Pruebas Automatizadas/);
   
   //find input de user
   await page.locator("id=identification").click();
@@ -22,6 +23,7 @@ test.beforeEach(async ({ page }) => {
   
 });
 */
+
 test.beforeEach(async ({ page }) => {
     
     await page.goto('http://localhost:2368/ghost/');
@@ -42,6 +44,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByRole('button', {name: 'Sign in →'}).click();
     
   });
+ 
 
 // Test to check if the login is successful and click on Page
 test('has pages', async ({ page }) => {
@@ -54,7 +57,9 @@ test('has New page', async ({ page }) => {
     //await page.goto('http://35.244.81.193/ghost/#/pages');
     await page.goto('http://localhost:2368/ghost/#/pages');
     await page.getByRole('link', { name: 'New page' }).click();
-    await page.getByPlaceholder('Page title').fill('Nueva pagina con Tag de prueba');
+    await page.getByPlaceholder('Page title').fill('Nueva pagina de prueba');
     await page.screenshot({ path: 'screenshotNewPage.png' });
+    await page.getByTitle('Settings').click();
+    await page.locator('li').filter({ hasText: 'Page history' }).click();
+    await page.screenshot({ path: 'screenshotNewPagesss.png' });
   });
-

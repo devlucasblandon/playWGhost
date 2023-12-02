@@ -53,19 +53,6 @@ test('has View site', async ({ page }) => {
   await page.screenshot({ path: 'screenshotViewsite.png' });
 })
 
-// Test to check if the login is successful and click on Posts
-/*
-test('has Posts', async ({ page }) => {
-  await page.getByRole('link', { name: 'Posts' }).click();
-  await page.screenshot({ path: 'screenshotPosts.png' });
-}) */
-
-// Test to check if the login is successful and click on Explore
-/* test('has Explore', async ({ page }) => {
-  await page.getByRole('link', { name: 'Explore' }).click();
-  await page.screenshot({ path: 'screenshotExplore.png' });
-}) */
-
 // Test to check if the login is successful and click on Draft
 test('has Draft', async ({ page }) => {
   await page.getByRole('link', { name: 'Drafts' }).click();
