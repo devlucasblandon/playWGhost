@@ -3,9 +3,8 @@ const { test, expect } = require('@playwright/test');
 const path = require('path');
 
 test.beforeEach(async ({ page }) => {
-  //await page.goto('http://35.244.81.193/ghost');
-  await page.goto('http://localhost:2368/ghost/');
-
+  await page.goto('http://35.244.81.193/ghost');
+  
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Sign In - Pruebas Automatizadas/);
   
@@ -34,8 +33,7 @@ test('has page', async ({ page }) => {
 
 // Test to check if button New Page works
 test('has New page', async ({ page }) => {
-  //await page.goto('http://35.244.81.193/ghost/#/pages');
-  await page.goto('http://localhost:2368/ghost/#/pages');
+  await page.goto('http://35.244.81.193/ghost/#/pages');
   await page.screenshot({ path: 'screenshotPasslink.png' });
   await page.getByRole('link', { name: 'New page' }).click();
   await page.screenshot({ path: 'screenshotNewPage.png' });

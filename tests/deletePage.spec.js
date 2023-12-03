@@ -29,7 +29,6 @@ test('has pages', async ({ page }) => {
 // Test to check if button Delete Works
 test('has New page', async ({ page }) => {
     await page.goto('http://35.244.81.193/ghost/#/pages');
-    //await page.goto('http://localhost:2368/ghost/#/pages');
     await page.getByRole('link', { name: 'New page' }).click();
     await page.getByPlaceholder('Page title').fill('Pagina de prueba para borrar');
     await page.getByTitle('Settings').click();
